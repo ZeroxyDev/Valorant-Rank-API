@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valorank</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="block b-1"></div>
+      <div class="block b-2"></div>
+      <div class="block b-3"></div>
+      <div class="block b-4"></div>
+      <div class="block b-5"></div>
+      <div class="block b-6"></div>
+      <div class="block b-7"></div>
+    </div>
+    <div class="overlay"></div>
+<!--     <div class="made">Made with <i class="fa-solid fa-heart"></i> by Zeroxy</div> -->
+    <p class="title">Made with <3 by Zeroxy</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+      // Wrap every letter in a span
+      var textWrapper = document.querySelector(".title");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+
+      anime.timeline().add({
+        targets: ".title .letter",
+        translateY: [-200, 0],
+        easing: "easeOutExpo",
+        duration: 1400,
+        delay: (el, i) => 500 + 30 * i,
+      });
+    </script>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const path = require('path');
 
 const HenrikDevValorantAPI = require('unofficial-valorant-api');
 const vapi = new HenrikDevValorantAPI();
@@ -9,8 +10,10 @@ const fs = require('fs');
 const myConsole = new console.Console(fs.createWriteStream('./output.txt'));
 
 app.get('/', (req, res) => {
-  res.send('Made with love by Zeroxy');
+  res.sendFile(__dirname + '/index.html');
 });
+
+app.use(express.static(path.join(__dirname, '/')));
 
 app.get('/mmr/valorant/:name/:tag/:reg', async (req, res, next) => {
   const name = req.params.name;
