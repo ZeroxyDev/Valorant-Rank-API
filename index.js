@@ -34,8 +34,8 @@ app.get('/mmr/valorant/:name/:tag/:reg', async (req, res, next) => {
 
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
-  res.send(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR.`);
-  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR.`);
+  res.send(`${mmr_data.data.currenttierpatched} (${mmr_data.data.ranking_in_tier} RR).`);
+  myConsole.log(`${mmr_data.data.currenttierpatched} (${mmr_data.data.ranking_in_tier} RR).`);
 });
 
 
@@ -81,8 +81,8 @@ app.get('/all/valorant/:name/:tag/:reg', async (req, res) => {
 
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
-  res.send(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR. Last match: ${mmr_data.data.mmr_change_to_last_game} RR.`);
-  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR. Last match: ${mmr_data.data.mmr_change_to_last_game} RR.`);
+  res.send(`${mmr_data.data.currenttierpatched} (${mmr_data.data.ranking_in_tier} RR). Last match: ${mmr_data.data.mmr_change_to_last_game} RR.`);
+  myConsole.log(`${mmr_data.data.currenttierpatched} (${mmr_data.data.ranking_in_tier} RR). Last match: ${mmr_data.data.mmr_change_to_last_game} RR.`);
 });
 
 app.get('/mmr/valorant/:name/:tag/:reg/es', async (req, res, next) => {
@@ -158,8 +158,8 @@ app.get('/mmr/valorant/:name/:tag/:reg/es', async (req, res, next) => {
 
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
-  res.send(`${newdata} - ${mmr_data.data.ranking_in_tier} RR.`);
-  myConsole.log(`${newdata} - ${mmr_data.data.ranking_in_tier} RR`);
+  res.send(`${newdata} (${mmr_data.data.ranking_in_tier} RR).`);
+  myConsole.log(`${newdata} (${mmr_data.data.ranking_in_tier} RR).`);
 });
 
 
@@ -259,8 +259,8 @@ app.get('/all/valorant/:name/:tag/:reg/es', async (req, res) => {
 
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
-  res.send(`${newdata} - ${mmr_data.data.ranking_in_tier} RR. Última partida: ${mmr_data.data.mmr_change_to_last_game} RR.`);
-  myConsole.log(`${newdata} - ${mmr_data.data.ranking_in_tier} RR. Última partida: ${mmr_data.data.mmr_change_to_last_game} RR`);
+  res.send(`${newdata} (${mmr_data.data.ranking_in_tier} RR). Última partida: ${mmr_data.data.mmr_change_to_last_game} RR.`);
+  myConsole.log(`${newdata} (${mmr_data.data.ranking_in_tier} RR). Última partida: ${mmr_data.data.mmr_change_to_last_game} RR`);
 });
 
 app.listen(port, () => {
