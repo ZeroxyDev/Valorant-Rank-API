@@ -9,7 +9,7 @@ const fs = require('fs');
 const myConsole = new console.Console(fs.createWriteStream('./output.txt'));
 
 app.get('/', (req, res) => {
-  res.send('Hi :)');
+  res.send('Made with love by Zeroxy');
 });
 
 app.get('/mmr/valorant/:name/:tag/:reg', async (req, res, next) => {
@@ -32,7 +32,7 @@ app.get('/mmr/valorant/:name/:tag/:reg', async (req, res, next) => {
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
   res.send(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR.`);
-  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
+  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR.`);
 });
 
 
@@ -56,7 +56,7 @@ app.get('/lastgame/valorant/:name/:tag/:reg', async (req, res) => {
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
   res.send(`${mmr_data.data.mmr_change_to_last_game} RR.`);
-  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
+  myConsole.log(`${mmr_data.data.mmr_change_to_last_game} RR.`);
 });
 
 app.get('/all/valorant/:name/:tag/:reg', async (req, res) => {
@@ -79,7 +79,7 @@ app.get('/all/valorant/:name/:tag/:reg', async (req, res) => {
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
   res.send(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR. Last match: ${mmr_data.data.mmr_change_to_last_game} RR.`);
-  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
+  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR. Last match: ${mmr_data.data.mmr_change_to_last_game} RR.`);
 });
 
 app.get('/mmr/valorant/:name/:tag/:reg/es', async (req, res, next) => {
@@ -94,7 +94,7 @@ app.get('/mmr/valorant/:name/:tag/:reg/es', async (req, res, next) => {
     tag: tag,
   });
 
-    if (mmr_data.data.currenttierpatched.includes("Iron")) {
+  if (mmr_data.data.currenttierpatched.includes("Iron")) {
 
     data = mmr_data.data.currenttierpatched
     newdata = mmr_data.data.currenttierpatched.replace('Iron', 'Hierro')
@@ -155,8 +155,8 @@ app.get('/mmr/valorant/:name/:tag/:reg/es', async (req, res, next) => {
 
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
-  res.send(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR.`);
-  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
+  res.send(`${newdata} - ${mmr_data.data.ranking_in_tier} RR.`);
+  myConsole.log(`${newdata} - ${mmr_data.data.ranking_in_tier} RR`);
 });
 
 
@@ -180,7 +180,7 @@ app.get('/lastgame/valorant/:name/:tag/:reg/es', async (req, res) => {
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
   res.send(`${mmr_data.data.mmr_change_to_last_game} RR.`);
-  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
+  myConsole.log(`${mmr_data.data.mmr_change_to_last_game} RR.`);
 });
 
 app.get('/all/valorant/:name/:tag/:reg/es', async (req, res) => {
@@ -257,9 +257,9 @@ app.get('/all/valorant/:name/:tag/:reg/es', async (req, res) => {
   //console.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
   //console.log(`${name}#${tag}`);
   res.send(`${newdata} - ${mmr_data.data.ranking_in_tier} RR. Última partida: ${mmr_data.data.mmr_change_to_last_game} RR.`);
-  myConsole.log(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
+  myConsole.log(`${newdata} - ${mmr_data.data.ranking_in_tier} RR. Última partida: ${mmr_data.data.mmr_change_to_last_game} RR`);
 });
 
 app.listen(port, () => {
-  myConsole.log(`Example app listening at http://localhost:${port}`)
+  myConsole.log(`Cache`)
 });
